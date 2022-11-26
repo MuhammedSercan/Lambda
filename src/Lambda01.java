@@ -45,8 +45,7 @@ public class Lambda01 {
     }
 
 
-    //TASK  : "Structured Programming" kullanarak list elemanlarını aynı satirda
-    // aralarında bosluk olacak sekilde print ediniz.
+    //TASK  : "Structured Programming" kullanarak list elemanlarını aynı satirda aralarında bosluk olacak sekilde print ediniz.
 
     public static void printElStructured(List<Integer> sayı) {
         for (Integer w : sayı) {
@@ -80,8 +79,7 @@ public class Lambda01 {
                 forEach(Lambda01::yazdır);// Method Referance
     }
 
-    //TASK  : functional Programming ile list elemanlarinin  cift olanlarini ayni satirda aralarina bosluk birakarak
-    //        print ediniz.
+    //TASK  : functional Programming ile list elemanlarinin  cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
     public static void printCiftElFunctional(List<Integer> sayı) {
         sayı.
@@ -89,8 +87,7 @@ public class Lambda01 {
                 filter((t) -> t % 2 == 0).
                 forEach(Lambda01::yazdır);
     }
-        //TASK  : functional Programming ile list elemanlarinin  cift olanlarini ayni satirda aralarina bosluk birakarak
-        //        print ediniz.
+        //TASK  : structured Programming ile list elemanlarinin  cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
         public static void printCiftElStructured (List < Integer > sayı) {
             for (Integer w : sayı) {
@@ -101,17 +98,18 @@ public class Lambda01 {
 
         }
 
-    //TASK :functional Programming ile list elemanlarinin
-    //      34 den kucuk cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
+    //TASK :functional Programming ile list elemanlarinin 34 den kucuk cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
     public static void printCiftOtzdKckFunctional(List < Integer > sayı){
 
-        sayı.stream().filter(t->t%2==0 && t<34).forEach(Lambda01::yazdır);
+        sayı.
+                stream().
+                filter(t->t%2==0 && t<34).
+                forEach(Lambda01::yazdır);
 
     }
 
-    //Task : functional Programming ile list elemanlarinin 34 den buyuk
-    //       veya cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
+    //Task : functional Programming ile list elemanlarinin 34 den buyuk eya cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
     public static void printCiftOtzdBykFunctional(List < Integer > sayı){
         sayı.
