@@ -34,6 +34,9 @@ public class Lambda01 {
         printCiftElFunctional(sayı);
 
         System.out.println();
+        printCiftElFunctional1(sayı);
+
+        System.out.println();
         printCiftElStructured(sayı);
 
         System.out.println();
@@ -87,6 +90,23 @@ public class Lambda01 {
                 filter((t) -> t % 2 == 0).
                 forEach(Lambda01::yazdır);
     }
+
+        //Yukarıdaki Task i filter() kısmını method referance ile yapalım
+
+        public static boolean ciftBul(int a){
+        return a%2==0;
+        }
+
+    public static void printCiftElFunctional1(List<Integer> sayı) {
+        sayı.
+                stream().
+                filter(Lambda01::ciftBul).
+                forEach(Lambda01::yazdır);
+    }
+
+
+
+
         //TASK  : structured Programming ile list elemanlarinin  cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
 
         public static void printCiftElStructured (List < Integer > sayı) {
@@ -118,6 +138,8 @@ public class Lambda01 {
                 forEach(Lambda01::yazdır);
 
     }
+
+
 
 
 
