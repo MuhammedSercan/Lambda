@@ -76,6 +76,10 @@ public class Lambda01 {
         System.out.print(a + " ");
     }
 
+    public static void yazdır(String a) {
+        System.out.print(a + " ");
+    }
+
     public static void printElFunctional2(List<Integer> sayı) {
         sayı.
                 stream().

@@ -98,10 +98,10 @@ public class Lambda02 {
     // Task-5 : List'in cift elemanlarin karelerinin en buyugunu print ediniz
 
     public static void ciftKareEnBuyk(List<Integer> sayi){
-        System.out.print(sayi.
+        System.out.println(sayi.
                 stream().
                 filter(Lambda01::ciftBul).
-                map(t->t*t).
+                map(t -> t * t).
                 reduce(Integer::max)); //Math::max a göre daha hızlı çalışır
 
     }
@@ -159,7 +159,8 @@ public class Lambda02 {
     // Task-9 : List'teki 5'ten buyuk en kucuk tek sayiyi print ediniz.
 
     public static void bestenBuyukEnKucukTek(List<Integer> sayi){
-        System.out.print(sayi.stream().
+        System.out.print(sayi.
+                stream().
                 filter(a -> a > 5 && a % 2 != 0).
                 reduce(Lambda02::byMiracMin));
     }
