@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Lambda04 {
@@ -26,6 +23,9 @@ public class Lambda04 {
         System.out.println("notOrt74BykUnv(unv) = " + notOrt74BykUnv(unv));
         System.out.println("mathVarMı(unv) = " + mathVarMı(unv));
         System.out.println("ogrSayisiBykKckSirala(unv) = " + ogrSayisiBykKckSirala(unv));
+        System.out.println(mathBolumSayisi(unv));
+        System.out.println(besYuzEllidenFazlaEnBykNotOrt(unv));
+        System.out.println(binEllidenAzEnKücükNot(unv));
     }
 
     //task 01--> bütün üniv.lerin notOrt'larinin 74' den buyuk oldg kontrol eden pr create ediniz.
@@ -49,12 +49,39 @@ public class Lambda04 {
     public static List<Universite> ogrSayisiBykKckSirala(List<Universite> unv){
        return unv.
                 stream().//akış sağlandı
-                sorted(Comparator.comparing(Universite::getOgrSayisi).//üniversiteler öğrenci sayısına göre tersten sıralandı
-                reversed()).collect(Collectors.toList());//stream yapısı list yapısına dönüştürüldü
+                sorted(Comparator.comparing(Universite::getOgrSayisi).reversed()).//üniversiteler öğrenci sayısına göre tersten sıralandı
+                collect(Collectors.toList());//stream yapısı list yapısına dönüştürüldü
 
     }
 
+    //task 04-->"matematik" bolumlerinin sayisini  print ediniz.
 
+    public static long mathBolumSayisi(List<Universite> unv){
+       return unv.
+                stream().                   //akış sağlandı
+                filter(t->t.getBolum().     //matematik olan üniv leri seçtim
+                 equalsIgnoreCase("matematik")). //seçilen üniv mat mı
+                count();// saydık
+    }
+
+    //task 05-->Ogrenci sayilari 550'dan fazla olan universite'lerin en buyuk notOrt'unu bulunuz.
+
+    public static OptionalInt besYuzEllidenFazlaEnBykNotOrt(List<Universite> unv){
+        return unv.
+                stream().
+                filter(t->t.getOgrSayisi()>550).
+                mapToInt(t->t.getNotOrt()).
+                max();
+    }
+    //task 06-->Ogrenci sayilari 1050'dan az olan universite'lerin en kucuk notOrt'unu bulunuz.
+
+    public static OptionalInt binEllidenAzEnKücükNot(List<Universite> unv){
+        return unv.
+                stream().
+                filter(t->t.getOgrSayisi()<1050).
+                mapToInt(t->t.getNotOrt()).
+                min();
+    }
 
 
 

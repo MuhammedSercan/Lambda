@@ -77,7 +77,9 @@ public class Lambda03 {
     // Task-4 : List elemalarinin karakter sayisini 7 ve 7 'den az olma durumunu kontrol ediniz.
 
     public static void harfSayisiYediKontrol(List<String> yemek){
-        System.out.print(yemek.stream().allMatch(t -> t.length() <= 7) ?
+        System.out.print(yemek.
+                stream().
+                allMatch(t -> t.length() <= 7) ?
                 "list elemanlarının tümü 7 ve daha az harften oluşuyor" :
                 "list elemanlarında 7 harften fazla harften oluşanlar mevcut");
     }
